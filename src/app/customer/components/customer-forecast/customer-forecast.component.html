@@ -1,0 +1,33 @@
+<span class="mat-display-1">Proyección y Análisis de Clientes</span>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-card>
+          <mat-card-title>Promedio y Desviación Estandar de Edades</mat-card-title>
+          <mat-card-content>
+            <ngx-charts-number-card
+              [view]="[500, 250]"
+              [scheme]="cardColorScheme"
+              [results]="cardSingle"
+              [cardColor]="cardColor">
+            </ngx-charts-number-card>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Segmentación por Edades</mat-card-title>
+        <mat-card-content>
+          <ngx-charts-pie-chart
+            [view]="[500, 200]"
+            [scheme]="pieColorScheme"
+            [results]="pieSingle"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [legendPosition]="legendPosition"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut">
+          </ngx-charts-pie-chart>
+      </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>

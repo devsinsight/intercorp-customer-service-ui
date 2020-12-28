@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Registrar Cliente</h2>
+
+<mat-dialog-content [formGroup]="form">
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre" formControlName="firstName">
+            <mat-error *ngIf="submitted && f.firstName.errors?.required">El nombre es requerido</mat-error>
+        </mat-form-field>   
+    </p>
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Apellido</mat-label>
+            <input matInput placeholder="Apellido" formControlName="lastName">
+            <mat-error *ngIf="submitted && f.lastName.errors?.required">El nombre es requerido</mat-error>
+        </mat-form-field>
+        
+    </p>
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Edad</mat-label>
+            <input type="number" matInput placeholder="Edad" formControlName="age">
+            <mat-error *ngIf="submitted && f.age.errors?.required">El nombre es requerido</mat-error>
+        </mat-form-field>
+        
+    </p>
+    <p>
+        <mat-form-field appearance="legacy">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput readonly [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>       
+            <mat-error *ngIf="submitted && f.birthdate.errors?.required">La fecha de nacimiento es requerida</mat-error>
+        </mat-form-field>
+        
+    </p>
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayout fxLayoutAlign="center">
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div>
+        <span class="mat-display-1">Proyección y Análisis de Clientes</span>
+    </div>
+    <div>
+        <button class="mat-raised-button mat-primary" (click)="addNewCustomer()">Nuevo</button>
+        <button class="mat-raised-button mat-accent" routerLink="/proyeccion">Proyección y Análisis</button>
+    </div>
+
+    <div>
+        <ngx-datatable class="material" 
+            [rows]="rows" 
+            [loadingIndicator]="loadingIndicator" 
+            [summaryRow]="true"
+            [summaryPosition]="'top'"
+            [summaryHeight]="55"
+            [columns]="columns"
+            [columnMode]="ColumnMode.force" 
+            [headerHeight]="50" 
+            [footerHeight]="50" 
+            [limit]="6" 
+            rowHeight="auto" 
+            [reorderable]="reorderable">
+        </ngx-datatable>
+    </div>
+</div>
