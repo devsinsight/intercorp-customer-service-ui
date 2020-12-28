@@ -56,7 +56,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatCardModule
   ],
   providers:[
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false, height: '400px', width: '240px' }}
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true, height: '420px', width: '260px' }}
   ]
 })
 export class MaterialModule {}

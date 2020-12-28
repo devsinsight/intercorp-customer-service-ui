@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import { CustomerService } from '../../services/customer.service';
@@ -16,7 +16,7 @@ export class CustomerManagementComponent implements OnInit {
   kpiClientes: any = {};
   loadingIndicator = true;
   reorderable = true;
-
+  
   columns: TableColumn[] = [
     { name: 'Nombre', prop: 'firstName' },
     { name: 'Apellido', prop: 'lastName' },
@@ -30,7 +30,7 @@ export class CustomerManagementComponent implements OnInit {
   constructor(
     private customerFormDialog: MatDialog,
     private customerService: CustomerService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {
